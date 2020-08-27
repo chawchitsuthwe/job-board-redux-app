@@ -9,7 +9,7 @@
 }
 
 .card-text{
-	padding-bottom: 0px;
+	margin-bottom: -20px;
 }
 
 .card-link{
@@ -23,8 +23,9 @@
 }
 
 .card:hover .card-link {
+   padding-top: 30px;
    transition: all 0.3s ease;
    opacity: 1;
-   max-height:40px;
+   max-height:10px;
    color: #C779D0;
 }

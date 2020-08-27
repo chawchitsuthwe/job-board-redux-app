@@ -2,7 +2,7 @@ import React from 'react'
 
 const NoResult = () => {
 	return (
-		<div>
+		<div className="mb-5">
 			<h1>Nothing Found</h1>
 			<p>Sorry, but nothing matched your search of <strong>[user search keywords]</strong>. <br />
 				Please try again with some different keywords.</p>

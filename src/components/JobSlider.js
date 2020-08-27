@@ -4,6 +4,7 @@ import './JobSlider.css';
 import JobCard from './JobCard';
 
 const JobSlider = () => {
+
 	return (
 		<div>
 			<div id="multi-item-example" className="carousel slide carousel-multi-item" data-ride="carousel">
@@ -27,8 +28,9 @@ const JobSlider = () => {
 	    			</div>
     			</div>
     		</div>
+
 		</div>
 	)
 }
 
-export default JobSlider
+export default JobSlider;
