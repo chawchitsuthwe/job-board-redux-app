@@ -12,5 +12,27 @@
 }
 
 h2{
-	color: #C779D0;
+	color: #FEAC5E;
+}
+
+.curved-div {
+  position: relative;
+  background: #C779D0;
+  color: #FFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.curved-div.upper {
+  background: #fff;
+}
+
+.curved-div p {
+  font-size: 1rem;
+  margin:0 5rem 2rem 5rem;
+}
+
+.footer{
+   	left: 0;
+  	bottom: 0;
 }
