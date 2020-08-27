@@ -1,0 +1,22 @@
+.footer-curved-div {
+  position: relative;
+  background: #FEAC5E;
+  color: #FFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-curved-div.upper {
+  background: #fff;
+}
+
+.footer-curved-div p {
+  font-size: 1rem;
+  margin:0 5rem 2rem 5rem;
+}
+
+.footer{
+   	left: 0;
+  	bottom: 0;
+    position: absolute;
+}
