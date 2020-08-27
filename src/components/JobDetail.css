@@ -1,0 +1,11 @@
+.detail-card{
+	margin-top: 20px;
+	padding: 50px;
+    background: linear-gradient(to bottom left, #febe5e, #c7a4d0, #ffe1ff, #ffffff);
+    border: 1px;
+   	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.24);
+}
+
+.content p{
+	font-size: 18px;
+}
