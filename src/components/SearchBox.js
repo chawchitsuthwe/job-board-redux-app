@@ -5,7 +5,7 @@ const SearchBox = () => {
 		<div>
 			<form className="mt-2 mb-1">
 				<div className="form-row">
-					<div className="col-md-10">
+					<div className="col-md-10 mb-1">
 						<input className="form-control" type="text" placeholder="job,tag,category" />
 					</div>
 					<div className="col-md-2">

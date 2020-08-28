@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './JobDetail.css';
+import Tag from './Tag';
 
 const JobDetail = () => {
 
@@ -12,6 +13,15 @@ const JobDetail = () => {
 						<h1>Job Title</h1>
 						<h4>Company Name</h4>
 						<h6 className="text-dark">Published Date - April 2, 2020</h6>
+					</div>
+				</div>
+				<div className="row mt-3">
+					<div className="col-12">
+						<div className="d-flex justify-content-start flex-wrap">
+							<Tag />
+							<Tag />
+							<Tag />
+						</div>
 					</div>
 				</div>
 				<div className="row mt-3">

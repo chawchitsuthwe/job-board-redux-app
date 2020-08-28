@@ -45,3 +45,13 @@ body {
 .btn.gradient{	
     background-image: linear-gradient(to right, #FEAC5E, #C779D0, #4BC0C8);
 }
+
+.card{
+    border-radius: 30px;
+   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.24);
+}
