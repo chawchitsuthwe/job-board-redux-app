@@ -17,7 +17,7 @@ const JobSlider = ({pending, jobs, fetchJobs}) => {
 		<div>
 		{ pending ? <Loader /> : 
 			jobs && jobs.map( job =>
-	    		<JobCard key={job.id} job={job} />	
+	    		<JobCard key={job.id} job={job} pb={true} />	
 		)}
 		</div>
 	)

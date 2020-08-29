@@ -26,7 +26,7 @@ const Result = ({ match, pending, jobs, fetchJobs }) => {
           		pending ? <Loader /> :
           			jobs && jobs.length>0 ? (
     		    	
-                    jobs.map(job => <JobCard key={job.id} job={job}/>)
+                    jobs.map(job => <JobCard key={job.id} job={job} pb={false} />)
                   	
           			) : <NoResult keyword={match.params.keyword} />
        		}

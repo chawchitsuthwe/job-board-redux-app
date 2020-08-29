@@ -1,14 +1,13 @@
-
 .card-link{
   margin: 0;
-   font-size: 13px;
-   color: white;
-   letter-spacing: 2px;
-   opacity: 0;
-   max-height:0;
-   transition: all 0.3s ease;
-   text-decoration: none;
-   padding-bottom: 10px;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height:0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding-bottom: 10px;
 }
 
 .card-text{
@@ -16,9 +15,9 @@
 }
 
 .card:hover .card-link {
-   padding-top: 35px;
-   transition: all 0.3s ease;
-   opacity: 1;
-   max-height:10px;
-   color: #C779D0;
+  padding-top: 35px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height:10px;
+  color: #C779D0;
 }

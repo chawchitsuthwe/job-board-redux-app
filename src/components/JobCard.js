@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 import './JobCard.css';
 
-const JobCard = ({ job }) => {
+const JobCard = ({ job, pb }) => {
+
+	var style = pb ? "card-body pb-0" : "card-body";
 
   	const formatDate = (string) => {
     	var options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -12,10 +14,10 @@ const JobCard = ({ job }) => {
 
 	return (
 			<Link to={`/job/${job.id}`} style={{ textDecoration: 'none' }}>
-				<div className="row job">
+				<div className="row">
 					<div className="col-12">
-						<div className="card mb-2 text-dark result">
-						  	<div className="card-body">
+						<div className="card mb-2 text-dark">
+						  	<div className={style}>
 						    	<h6 className="card-subtitle mb-2 text-muted">{ job.categories.location ? job.categories.location : "" }</h6>
 						    	<h5 className="card-title">{ job.text }</h5>
 						    	<h6 className="card-text">{ formatDate(job.createdAt) }</h6>
