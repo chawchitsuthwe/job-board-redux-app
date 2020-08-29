@@ -28,14 +28,14 @@ const Result = ({ match, pending, jobs, fetchJobs }) => {
     		    	
                     jobs.map(job => <JobCard key={job.id} job={job}/>)
                   	
-          			) : <NoResult />
+          			) : <NoResult keyword={match.params.keyword} />
        		}
 		</div>
 	)
 }
 
 const mapStateToProps = state => {
-	return state.Job;
+	return state.Jobs;
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({

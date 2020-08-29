@@ -1,6 +1,6 @@
 let initialState = { pending: true, jobs:[] };
 
-const Job = (state = initialState, action) => {
+const Jobs = (state = initialState, action) => {
   switch(action.type){
     case "FETCH_JOBS_PENDING":
       return{
@@ -25,4 +25,4 @@ const Job = (state = initialState, action) => {
   }
 }
 
-export default Job;
+export default Jobs;

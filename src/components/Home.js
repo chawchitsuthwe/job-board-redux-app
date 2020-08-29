@@ -1,21 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import fetchCategories from '../actions/fetchCategories';
 
 import './Home.css';
 import SearchBox from './SearchBox';
 import JobSlider from './JobSlider';
 import CategoryCard from './CategoryCard';
-import Loader from './Loader';
 
-const Home = ({pending, category, fetchCategories}) => {
+const Home = () => {
 
-	useEffect(() => {
-		fetchCategories();
-	}, [fetchCategories]);
+	const categories = ["Contract", "Contract - Remote", "Freelance", "Full Time", "Internship", "Part Time",
+					"Regular Full Time (Salary)", "Student" ];
 
 	return (
 		<div className="text-center">
@@ -48,32 +42,20 @@ const Home = ({pending, category, fetchCategories}) => {
 						</svg>
 					</div>
 				</section>
-				{ pending ? <Loader /> :( 
-				<div>
-					<section id="categories" className="mb-3">
-						<h2 className="text-center my-5">Find Jobs By Category</h2>
-						<div className="container">
-							<div className="d-flex justify-content-center flex-wrap">
-								{ category && category.map( cate => 
-									<Link key={cate.id} to={`/result/${cate.slug}`}>
-										<CategoryCard key={cate.id} category={cate}/>
-									</Link> 
-								)}
-							</div>
+				<section id="categories" className="mb-3">
+					<h2 className="text-center my-5">Find Jobs By Category</h2>
+					<div className="container">
+						<div className="d-flex justify-content-center flex-wrap">
+							{ categories && categories.map( (category, index) => 
+								<Link key={index} to={`/result/ca:${category}`}>
+									<CategoryCard key={index} category={category}/>
+								</Link> 
+							)}
 						</div>
-					</section>
-				</div>
-			)}
+					</div>
+				</section>
 		</div>
 	)
 }
 
-const mapStateToProps = state => {
-	return state.Category;
-}
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-	fetchCategories: fetchCategories
-}, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

@@ -2,26 +2,29 @@ import { fetchJobsPending, fetchJobsSuccess, fetchJobsError } from './index';
 import axios from 'axios';
 
 const fetchJobs = ( keyword ) => {
-    var link = "/api/remote-jobs?limit=10";
-    switch(keyword){
-        case 'all' : link = "/api/remote-jobs?limit=20";break;
-        case 'limit' : link = "/api/remote-jobs?limit=9";break;
-        case 'software-dev' : link = "/api/remote-jobs?category=software-dev&limit=10";break;
-        case 'customer-support' : link = "/api/remote-jobs?category=customer-support&limit=10";break;
-        case 'design' : link = "/api/remote-jobs?category=design&limit=10";break;
-        case 'marketing-sales' : link = "/api/remote-jobs?category=marketing-sales&limit=10";break;
-        case 'product' : link = "/api/remote-jobs?category=product&limit=10";break;
-        case 'all-others' : link = "/api/remote-jobs?category=all-others&limit=10";break;
-        default : link = `/api/remote-jobs?search=${keyword}`;
-    }
 
+    var link = "https://api.lever.co/v0/postings/leverdemo?mode=json";
+
+    var type = keyword.substring(0,3);
+
+    keyword = keyword.substring(3);
+    
+    switch(type){
+        case 'all' : link = "https://api.lever.co/v0/postings/leverdemo?mode=json";break;
+        case 'li:' : link = "https://api.lever.co/v0/postings/leverdemo?limit=5&mode=json";break;
+        case 'ca:' : link = `https://api.lever.co/v0/postings/leverdemo?commitment=${keyword}&mode=json`;break;
+        case 'se:' : link = `https://api.lever.co/v0/postings/leverdemo?mode=json&team=${keyword}`;break;
+        case 'id:' : link = `https://api.lever.co/v0/postings/leverdemo/${keyword}`;break;
+        default : link = "https://api.lever.co/v0/postings/leverdemo?mode=json";
+    }
     const encodedUrl = encodeURI(link);
+    console.log(encodedUrl)
 
     return dispatch => {
         dispatch(fetchJobsPending());
         return axios.get(encodedUrl)
                     .then(res => {
-                        dispatch(fetchJobsSuccess(res.data.jobs));
+                        dispatch(fetchJobsSuccess(res.data));
                     })
                     .catch(err => {
                         dispatch(fetchJobsError(err));

@@ -9,7 +9,7 @@ const SearchBox = () => {
 
 	const serchOnSubmit = (e) => {
 		e.preventDefault();
-		history.push(`/result/${search}`);
+		history.push(`/result/se:${search}`);
 	}
 
 	return (
@@ -17,7 +17,7 @@ const SearchBox = () => {
 			<form className="mt-2 mb-1" onSubmit={serchOnSubmit}>
 				<div className="form-row">
 					<div className="col-md-10 mb-1">
-						<input className="form-control" type="text" placeholder="search by job" 
+						<input className="form-control" type="text" placeholder="search by team" 
 						value={search} 
 				      	onChange={e => setSearch(e.target.value)}
 				      		/>

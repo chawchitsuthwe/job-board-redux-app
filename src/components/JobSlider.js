@@ -10,7 +10,7 @@ import Loader from './Loader';
 const JobSlider = ({pending, jobs, fetchJobs}) => {
 
 	useEffect(() => {
-		fetchJobs("limit");
+		fetchJobs("li:");
 	}, [fetchJobs]);
 
 	return (
@@ -25,7 +25,7 @@ const JobSlider = ({pending, jobs, fetchJobs}) => {
 
 
 const mapStateToProps = state => {
-	return state.Job;
+	return state.Jobs;
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({

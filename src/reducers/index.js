@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import Job from './Job';
-import Category from './Category';
+import Jobs from './Jobs';
 
-const rootReducer = combineReducers({ Job, Category });
+const rootReducer = combineReducers({ Jobs });
 
 export default rootReducer;
