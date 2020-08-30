@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetchJobs from '../actions/fetchJobs';
+import {fetchJobsBySearch} from '../actions/fetchJobs';
 
 import SearchBox from './SearchBox';
 import NoResult from './NoResult';
@@ -39,7 +39,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-	fetchJobs: fetchJobs
+	fetchJobs: fetchJobsBySearch
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Result);

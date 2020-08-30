@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetchJobs from '../actions/fetchJobs';
+import {fetchJobsById} from '../actions/fetchJobs';
 
 import './JobDetail.css';
 import Loader from './Loader';
@@ -11,7 +11,7 @@ const JobDetail = ({ match, pending, jobs, fetchJobs }) => {
 
 
 	useEffect(() => {
-		fetchJobs(`id:${match.params.id}`);
+		fetchJobs(match.params.id);
 	}, [match.params.id, fetchJobs]);
 
 	return (
@@ -83,7 +83,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-	fetchJobs: fetchJobs
+	fetchJobs: fetchJobsById
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(JobDetail);

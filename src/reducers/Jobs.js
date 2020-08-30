@@ -1,6 +1,6 @@
 let initialState = { pending: true, jobs:[] };
 
-const Jobs = (state = initialState, action) => {
+export const Jobs = (state = initialState, action) => {
   switch(action.type){
     case "FETCH_JOBS_PENDING":
       return{
@@ -25,4 +25,27 @@ const Jobs = (state = initialState, action) => {
   }
 }
 
-export default Jobs;
+export const AllJobs = (state = initialState, action) => {
+  switch(action.type){
+    case "FETCH_ALL_JOBS_PENDING":
+      return{
+        initialState,
+        pending: true
+      };
+    case "FETCH_ALL_JOBS_SUCCESS":
+      return{
+        ...state,
+        pending: false,
+        alljobs: action.payload.alljobs
+      };
+    case "FETCH_ALL_JOBS_ERROR":
+      return{
+        ...state,
+        pending: true,
+      }
+    default:
+      return{
+        ...state
+      };
+  }
+}
